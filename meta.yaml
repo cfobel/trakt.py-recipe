@@ -1,0 +1,39 @@
+package:
+  name: trakt
+  version: "2.7.3"
+
+source:
+  fn: 2.7.3.tar.gz
+  url: https://github.com/moogar0880/PyTrakt/archive/2.7.3.tar.gz
+
+build:
+  script: python setup.py install
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - requests >=2.9
+    - requests-oauthlib >=0.6
+    - six >=1.10
+
+  run:
+    - python
+    - requests >=2.9
+    - requests-oauthlib >=0.6
+    - six >=1.10
+
+test:
+  # Python imports
+  imports:
+    - trakt
+
+about:
+  home: https://github.com/moogar0880/PyTrakt
+  license: Apache 2.0
+  summary: 'Pythonic abstraction layer for easier scripting of the Trakt.tv REST API.'
+  license_family: APACHE
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
